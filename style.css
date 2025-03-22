@@ -739,14 +739,6 @@ blockquote {
   color: #aaa;
 }
 
-.page.active-dark button {
-  background-color: #F1C40F;
-  color: #000;
-}
-
-.page.active-dark #progress button:hover {
-  background: #d4a507;
-}
 #completed {
   display: flex;
   flex-direction: column;
@@ -950,7 +942,12 @@ blockquote {
   border-color: #ff6b6b;
 }
 
+.page.active-dark .undo-btn button:hover {
+  color: white;
+}
+
 .page.active-dark .undo-btn button::before {
+  color: white;
   background: #ff6b6b;
 }
 .page.active-dark #deleted-list li {
