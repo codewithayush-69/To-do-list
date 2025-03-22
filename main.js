@@ -118,9 +118,17 @@ function moveToDeleted(taskName) {
     btnDiv.className = "undo-btn";
     li.appendChild(btnDiv);
 
+    const removeDiv = document.createElement("div");
+    removeDiv.className = "remove-btn";
+    li.appendChild(removeDiv);
+
     let undoBtn = document.createElement("button");
     undoBtn.textContent = "Undo";
     btnDiv.appendChild(undoBtn);
+
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "×";
+    removeDiv.appendChild(removeBtn);
 
     document.getElementById("deleted-list").appendChild(li);
     deletedTasks[taskName] = li;
@@ -128,6 +136,11 @@ function moveToDeleted(taskName) {
     undoBtn.onclick = function () {
         restoreTask(taskName);
         li.remove(); 
+    };
+
+    removeBtn.onclick = function (){
+        li.remove();
+        totalTaskCount.innerText = parseInt(totalTaskCount.innerText) - 1;
     };
 }
 

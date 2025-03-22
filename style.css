@@ -868,27 +868,42 @@ blockquote {
   }
 }
 
-#deleted-list li::before {
-  content: '×';
+.remove-btn {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%) rotate(0deg);
-  font-size: 2.5rem;
+  left: 90%;
+  bottom: 45%;
+  width: 5%;
+  text-align: center;
+}
+
+.remove-btn button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
   color: #e74c3c;
-  opacity: 0.5;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
 }
 
-#deleted-list li:hover::before {
-  transform: translateY(-50%) rotate(180deg);
-  opacity: 1;
+.remove-btn button:hover {
+  transform: rotate(180deg);
+  color: #c0392b;
+  text-shadow: 0 0 4px red;
 }
 
-#deleted-list li:hover {
-  transform: translateX(-5px);
-  background: linear-gradient(45deg, transparent, rgba(231, 76, 60, 0.1));
-  border-left-width: 12px;
+.page.active-dark .remove-btn button {
+  color: #ff6b6b;
+}
+
+.page.active-dark .remove-btn button:hover {
+  color: #e74c3c;
 }
 
 .undo-btn {
@@ -954,3 +969,4 @@ blockquote {
   }
 }
 
+/* written by @code.withayush69 */
