@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <div class="title">
+            <h1>To-Do List</h1>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="#" data-target="home">Home</a></li>
+            <li><a href="#" data-target="create">Create</a></li>
+            <li><a href="#" data-target="progress">Progress</a></li>
+            <li><a href="#" data-target="completed">Completed</a></li>
+            <li><a href="#" data-target="delete">Delete</a></li>
+        </ul>
+
+        <label class="switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider"></span>
+        </label>
+
+    </nav>
+
+    <section id="home" class="page active">
+        <div class="one">
+            <p>🏠 Home</p>
+        </div>
+        <p class="welcome">Welcome to Your To-Do List</p>
+        <p class="track">Track your tasks, set priorities, and manage your progress easily!</p>
+
+        <div class="stats">
+            <p>Total Tasks: <span id="total-tasks">0</span></p>
+            <p>Completed: <span id="completed-tasks">0</span></p>
+            <p>Pending: <span id="pending-tasks">0</span></p>
+        </div>
+        
+        <div class="quick-actions">
+            <button class="button" id="newtask-btn">
+                <div class="text">➕ Add New Task</div>
+            </button>
+            <button class="button" id="progress-btn">
+                <div class="text">📌 View In Progress</div>
+            </button>
+            <button class="button" id="complete-btn">
+                <div class="text">✅ View Completed</div>
+            </button>
+        </div>
+
+        <div class="motivational-quote">
+            <blockquote>
+                "It's easy to have faith when everything is going well, but remember, it's the storm that tests the strongest sailor.
+                Will you remain stand ?"
+            </blockquote>
+        </div>
+        
+    </section>
+
+    <section id="create" class="page">        
+            <div class="one">
+                <p>✍️ Create a New Task</p>
+            </div>
+            <form id="task-form">
+                <label for="task-title">Task Title:</label>
+                <input type="text" id="task-title" placeholder="Enter task title" required>
+        
+                <label for="task-desc">Description:</label>
+                <textarea id="task-desc" placeholder="Enter task details (optional)"></textarea>
+        
+                <label for="task-date">Due Date:</label>
+                <input type="date" id="task-date">
+        
+                <label for="task-priority">Priority:</label>
+                <select id="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+        
+                <label for="task-category">Category:</label>
+                <select id="task-category">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="study">Study</option>
+                    <option value="workout">Workout</option>
+                </select>
+        
+                <button type="submit" id="sumbit-btn">
+                    <span>➕ Add Task</span> 
+                </button>
+            </form> 
+    </section>
+
+    <section id="progress" class="page">
+        <div class="one">
+            <P>📌 Tasks in Progress</P>
+        </div>    
+            <ul id="progress-list"></ul>
+    </section>
+
+    <section id="completed" class="page">
+        <div class="one">
+            <p>✅ Completed</p>
+        </div>
+        <ul id="completed-list"></ul>
+    </section>
+    <section id="delete" class="page">
+        <div class="one">
+            <p>🗑 Delete</p>
+        </div>
+        <ul id="deleted-list"></ul>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
